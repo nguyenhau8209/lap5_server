@@ -27,9 +27,9 @@ app.get('/update_tho', async (req, res) =>{
   await mongoose.connect(uri).then(console.log('Ket noi DB thanh cong!'));
   btModel.updateMany({
     tieude: 'Song',
-    
+    tacgia: 'Xuan Quynh'
   }, {
-    nam: 1973
+    tacgia: 'Xuan Quynh update'
   })
   .then(data =>{
     console.log('thanh cong' + data);
@@ -38,7 +38,7 @@ app.get('/update_tho', async (req, res) =>{
     console.log("that bai");
   });
 
-  let listThos = await btModel.find();
+  let listThos = await btModel.find({});
 
   // btModel.updateMany({nam: 1975}, {nam: 1976})
   // btModel.updateOne()
@@ -68,11 +68,11 @@ app.get('/add_tho', async (req, res) => {
   await mongoose.connect(uri).then(console.log('Ket noi DB thanh cong!'));
 
   const baitho = new btModel(
-  {
-    tieude: 'Bep lua',
-    nam: 1973,
-    tacgia: 'Hoang Viet'
-  });
+    {
+      tieude: 'Song',
+      nam: 1969,
+      tacgia: 'Hoang Viet'
+    });
 
 
 
